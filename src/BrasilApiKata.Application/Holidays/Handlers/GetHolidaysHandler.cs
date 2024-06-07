@@ -23,7 +23,7 @@ public class GetHolidaysQueryHandler : IRequestHandler<GetHolidaysQuery, List<Ho
 
         var holidays = await _holidayService.GetHolidays(query.Year);
 
-        _logger.LogInformation("{Size} holidays found!", holidays);
+        _logger.LogInformation("{Year} has {Size} holidays!", query.Year, holidays.Count);
 
         return holidays;
     }

@@ -29,7 +29,6 @@ public class GetHolidaysController : ControllerBase
 
         var result = await _mediator.Send(query);
 
-
         return result.Select(model =>
             new GetHolidaysResponse
             {
